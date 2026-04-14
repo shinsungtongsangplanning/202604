@@ -873,7 +873,7 @@
                     const insightsUL = document.getElementById('dynamicInsights');
                     insightsUL.innerHTML = `
                         <li>Advance estimates of U.S. retail and food services sales for ${monthChart1} ${year} <strong>were $${currentRetailSales.toFixed(1)} billion, ${momDirection} ${Math.abs(momChange).toFixed(1)} percent from the previous month, and ${yoyDirection} ${Math.abs(yoyChange).toFixed(1)} percent ${yoyComparison} ${monthChart1} ${parseInt(year)-1}.</strong></li>
-                        <li>US apparel sales in ${monthChart2} resulted <strong>$${currentApparel.toFixed(1)} billion. ${apparelMomDirection} ${Math.abs(apparelMomChange).toFixed(1)}% from $${prevApparel.toFixed(1)} billion in the previous month, ${apparelYoyDirection} ${Math.abs(apparelYoyChange).toFixed(2)}% from $${yearAgoApparel.toFixed(1)} in the same month last year.</strong></li>
+                        <li>US apparel sales in ${monthChart2} resulted <strong>$${currentApparel.toFixed(1)} billion. ${apparelMomDirection} ${Math.abs(apparelMomChange).toFixed(1)}% from $${prevApparel.toFixed(1)} billion in the previous month, ${apparelYoyDirection} ${Math.abs(apparelYoyChange).toFixed(1)}% from $${yearAgoApparel.toFixed(1)} in the same month last year.</strong></li>
                         <li>The Consumer Price Index (CPI) <strong>${allItemsCPIYoyChange >= 0 ? 'increased' : 'decreased'} by ${Math.abs(allItemsCPIYoyChange).toFixed(1)}% year-over-year </strong> and <strong>${allItemsCPIMomChange >= 0 ? 'increased' : 'decreased'} by ${Math.abs(allItemsCPIMomChange).toFixed(1)}% month-over-month </strong></li>
                         <li>Core CPI <strong>${coreCPIMomChange >= 0 ? 'increased' : 'decreased'} ${Math.abs(coreCPIMomChange).toFixed(1)}% </strong> on the month and <strong>${coreCPIYoyChange >= 0 ? 'increased' : 'decreased'} ${Math.abs(coreCPIYoyChange).toFixed(1)}%</strong> from a year ago.</li>
                     `;
@@ -2491,7 +2491,192 @@
 
 
 
+<!--2부 시작-->
+<style>
+    .ref-toggle-btn {
+        background: var(--primary-color);
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 3px 10px;
+        font-size: 0.75rem;
+        cursor: pointer;
+        white-space: nowrap;
+        transition: opacity 0.2s;
+    }
+    .ref-toggle-btn:hover { opacity: 0.8; }
+    .ref-panel {
+        display: none;
+        margin-top: 10px;
+        padding: 12px;
+        background: var(--card-background-color);
+        border: 1px solid var(--card-border-color);
+        border-radius: 6px;
+    }
+    .ref-panel.active { display: block; }
+    .ref-panel img { max-width: 100%; margin-bottom: 8px; }
+    .ref-panel a { color: var(--primary-color); text-decoration: underline; }
+</style>
 
+<div class="report-container">
+    <header class="report-header">
+        <div>
+            <h1>Persona Simulation: Scenario Forecasting Intelligence</h1>
+            <div style="display:flex; align-items:center; gap:8px;">
+                <p style="margin:5px 0 0;">Goodfellow & Co Strategic Outlook 2026-2028 | Market Intelligence Simulation</p>
+                <button class="ref-toggle-btn" onclick="toggleRefPanel()">References</button>
+            </div>
+            <div class="ref-panel" id="refPanel">
+                <img id="refImg" src="short.png" alt="Reference" onclick="toggleRefImg()" style="cursor:pointer;" title="Click to toggle detail view">
+            </div>
+        </div>
+    </header>
+
+    <div class="grid-item">
+        <h3>Simulation Methodology & Disclaimer</h3>
+        <div class="method-box">
+            <div class="mini-card">
+                <span class="chip">Purpose</span>
+                <p style="margin:0;">This simulation is a <strong>strategic brainstorming tool</strong> designed for directional insights.</p>
+            </div>
+            <div class="mini-card">
+                <span class="chip">Reliability</span>
+                <p style="margin:0;">Forecasts are modeled on historical substitution logic and should be used for <strong>planning, not as guaranteed financial predictions.</strong></p>
+            </div>
+            <div class="mini-card">
+                <span class="chip">Workflow</span>
+                <p style="margin:0;">Recent study-inspired multi-agent simulations were used to test the Goodfellow "Quality Defense" against market "Price Pressure."</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-item">
+        <h3>Question and Evidence Seed</h3>
+        <p><strong>Scenario Focus:</strong> Should Target reduce men's prices immediately or hold and rely on the 100% cotton upgrade?</p>
+        <ul style="font-size: 0.95rem; padding-left: 20px; margin: 0;">
+            <li><strong>Core Conflict:</strong> Goodfellow Every Wear Tee ($10) vs. Walmart George ($6.98) price gap.</li>
+            <li><strong>The Holdout:</strong> Men's apparel was excluded from Target's March 11, 2026 spring price-cut program.</li>
+            <li><strong>Macro Volatility:</strong> U.S.-Iran war and Strait of Hormuz disruption impacting petrochemical/polyester costs.</li>
+            <li><strong>Consumer Shift:</strong> 41% of consumers now prioritize structural value over brand loyalty.</li>
+        </ul>
+    </div>
+
+    <div class="grid-item" style="grid-column: span 2;">
+        <h3>Detailed Forecast: Goodfellow & Co Strategic Timeline (2026-2028)</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Time Horizon</th>
+                    <th>Forecasted Market Impact</th>
+                    <th>Logic & Persona Evidence</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Short-Term<br>(0-6 Months)</strong></td>
+                    <td>
+                        * <strong>Traffic Vulnerability:</strong> Decline in men's section foot traffic compared to discounted women's/kids' categories.<br>
+                        * <strong>Conversion Pressure:</strong> Unit velocity for Every Wear tees drops as shoppers substitute for Walmart/Amazon basics.
+                    </td>
+                    <td>
+                        * <strong>WSJ Analysts:</strong> Contrast Target's $10 price with Walmart’s $6.98, making the premium hard to justify.<br>
+                        * <strong>BLS Monitors:</strong> War-related fuel/shipping costs are heightening consumer price sensitivity.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Mid-Term<br>(6-18 Months)</strong></td>
+                    <td>
+                        * <strong>Equity Erosion Risk:</strong> High risk of the brand being perceived as "selectively overpriced."<br>
+                        * <strong>Strategic Pivot:</strong> Implementation of a "Value Tier" sub-brand likely required to protect the mid-tier core.
+                    </td>
+                    <td>
+                        * <strong>Deloitte Insights:</strong> 41% value-prioritization is a "fundamental market transformation," not temporary.<br>
+                        * <strong>Retail Executives:</strong> Planned 100% cotton upgrade is the primary defense for holding the $10 price point.
+                    </td>
+                </tr>
+                <tr>
+                    <td><strong>Long-Term<br>(18-36 Months)</strong></td>
+                    <td>
+                        * <strong>Structural Evolution:</strong> Survival depends on successfully bridging the "Premium Positioning" vs. "Value Demand" gap.<br>
+                        * <strong>Market Share Stabilization:</strong> Brand settles into "style-led value" role or risks permanent share loss to Amazon.
+                    </td>
+                    <td>
+                        * <strong>Industry Consensus:</strong> Data suggests two paths: Premium Preservation (Quality-led) or Value Tier Integration.<br>
+                        * <strong>BLS Data:</strong> Structural shift from 35% to 41% of consumers prioritizing value necessitates adaptation.
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="grid-item" style="grid-column: span 2;">
+        <h3>Strategic Response & Action Plan</h3>
+        <ul>
+            <li>
+                <strong>Quality-Led Value Communication:</strong>
+                Aggressively market the 100% cotton upgrade to justify the $10 price point against Walmart's $6.98 poly-blend.
+                <span>(Counteracting price gap perception / Quality defense strategy)</span>
+            </li>
+            <li>
+                <strong>Category Traffic Rebalancing:</strong>
+                Integrate men's basics into upcoming "Value" marketing to correct the perception that the category is a pricing holdout.
+                <span>(Mitigating cannibalization from women's/kids' price cuts)</span>
+            </li>
+            <li>
+                <strong>Supply Chain Risk Mitigation:</strong>
+                Lock in cotton contracts and diversify petrochemical sourcing to hedge against Brent crude price spikes (Forecasted $115/b).
+                <span>(Response to U.S.-Iran geopolitical tensions)</span>
+            </li>
+            <li>
+                <strong>Internal Tier Management:</strong>
+                Leverage the 'dealworthy' brand as the absolute price floor, allowing Goodfellow to focus on fit and quality-led retention.
+                <span>(Preserving $31B owned-brand portfolio authority)</span>
+            </li>
+        </ul>
+    </div>
+
+    
+    <div class="grid-item" style="grid-column: span 2;">
+        <h3>Decision Rule: What Justifies a Price Cut vs a Hold-and-Monitor Strategy</h3>
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Decision path</th>
+                    <th>Evidence that supports it</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Immediate or near-term basics price cut</td>
+                    <td>
+                        <ul style="margin:0; padding-left:20px;">
+                            <li>Every Wear unit velocity falls materially below the 2025 baseline and does not recover with targeted promotion.</li>
+                            <li>Conversion on core basics weakens materially while higher-style men’s items remain relatively healthier.</li>
+                            <li>Review sentiment shifts toward “too expensive,” “not worth it,” or “Walmart/Amazon is close enough.”</li>
+                            <li>Men’s traffic weakens versus women’s and kids’ after Target’s spring value reset.</li>
+                            <li>The fabric/quality upgrade does not produce visible review, repeat, or conversion support.</li>
+                            <li>Competitor price gaps remain wide enough that Goodfellow basics increasingly look like the outlier, not the upgrade.</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Hold and monitor with promotions plus quality/value storytelling</td>
+                    <td>
+                        <ul style="margin:0; padding-left:20px;">
+                            <li>Ratings, repeat purchase, and basic-tee conversion stay resilient at the current architecture.</li>
+                            <li>The quality defense lands clearly and shoppers acknowledge the improvement.</li>
+                            <li>Walmart and Amazon pricing move up enough to narrow the relative perception gap.</li>
+                            <li>Promotions can recover demand tactically without training the shopper to wait for markdowns.</li>
+                            <li>Oil, freight, insurance, and supplier-cost visibility remain too unstable to justify a permanent list-price reset.</li>
+                            <li>Higher-style items continue to support margin and keep the full men’s brand from collapsing into a purely low-price frame.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--2부-->
+</div>
 <!--2부 끝-->
 
 
@@ -2513,9 +2698,15 @@
         <div class="grid-container">
             <div class="grid-item key-takeaways-box">
                 <h3>Executive Summary</h3>
-                <p>
-                    The U.S. retail landscape is facing severe margin compression driven by geopolitical instabilities (Strait of Hormuz), surging ocean freight, and new fulfillment cost burdens like Amazon's 3.5% FBA surcharge. However, blindly passing these costs onto inflation-weary consumers poses significant risks, as seen in foot traffic declines at Dollar Tree and regulatory backlash against dynamic "surveillance pricing." For our operations, the mandate is to navigate these dynamics with an agile, heavily monitored pricing approach. By leveraging strict CBP compliance for IEEPA refunds and observing aggressive competitor moves—such as Costco's pledge to pass duty refunds directly into lower prices—we can strategically balance margin defense with our core value proposition, utilizing supply chain efficiencies and high-ROI digital cashback promotions to retain our competitive edge.
-                </p>
+<p>
+    U.S. retailers are facing <strong>shrinking profit margins</strong> due to global conflicts, rising shipping costs, and new fulfillment fees.
+    <br><br>
+    However, <strong>passing these costs directly to consumers is risky</strong>. Shoppers are exhausted by inflation, and sudden price hikes can quickly drive them away.
+    <br><br>
+    To navigate this, operations require a <strong>flexible pricing strategy</strong>. Profit margins must be protected through <strong>supply chain efficiency and digital cashback promotions</strong>, instead of simply raising prices.
+    <br><br>
+    As competitors <strong>planning to lower prices</strong> if they receive duty refunds, <strong>maintaining strong customer value</strong> is essential to stay competitive.
+</p>
             </div>
 
             <div class="grid-item">
@@ -3079,165 +3270,25 @@
 </div>
 
 
-<!--2부 시작-->
 
-<div class="report-container">
-    <header class="report-header">
-        <div>
-            <h1>Persona Simulation: Scenario Forecasting Intelligence</h1>
-            <p>Goodfellow & Co Strategic Outlook 2026-2028 | Market Intelligence Simulation</p>
-        </div>
-    </header>
 
-    <div class="grid-item">
-        <h3>Simulation Methodology & Disclaimer</h3>
-        <div class="method-box">
-            <div class="mini-card">
-                <span class="chip">Purpose</span>
-                <p style="margin:0;">This simulation is a <strong>strategic brainstorming tool</strong> designed for directional insights.</p>
-            </div>
-            <div class="mini-card">
-                <span class="chip">Reliability</span>
-                <p style="margin:0;">Forecasts are modeled on historical substitution logic and should be used for <strong>planning, not as guaranteed financial predictions.</strong></p>
-            </div>
-            <div class="mini-card">
-                <span class="chip">Workflow</span>
-                <p style="margin:0;">Recent study-inspired multi-agent simulations were used to test the Goodfellow "Quality Defense" against market "Price Pressure."</p>
-            </div>
-        </div>
-    </div>
 
-    <div class="grid-item">
-        <h3>Question and Evidence Seed</h3>
-        <p><strong>Scenario Focus:</strong> Should Target reduce men's prices immediately or hold and rely on the 100% cotton upgrade?</p>
-        <ul style="font-size: 0.95rem; padding-left: 20px; margin: 0;">
-            <li><strong>Core Conflict:</strong> Goodfellow Every Wear Tee ($10) vs. Walmart George ($6.98) price gap.</li>
-            <li><strong>The Holdout:</strong> Men's apparel was excluded from Target's March 11, 2026 spring price-cut program.</li>
-            <li><strong>Macro Volatility:</strong> U.S.-Iran war and Strait of Hormuz disruption impacting petrochemical/polyester costs.</li>
-            <li><strong>Consumer Shift:</strong> 41% of consumers now prioritize structural value over brand loyalty.</li>
-        </ul>
-    </div>
 
-    <div class="grid-item" style="grid-column: span 2;">
-        <h3>Detailed Forecast: Goodfellow & Co Strategic Timeline (2026-2028)</h3>
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Time Horizon</th>
-                    <th>Forecasted Market Impact</th>
-                    <th>Logic & Persona Evidence</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>Short-Term<br>(0-6 Months)</strong></td>
-                    <td>
-                        * <strong>Traffic Vulnerability:</strong> Decline in men's section foot traffic compared to discounted women's/kids' categories.<br>
-                        * <strong>Conversion Pressure:</strong> Unit velocity for Every Wear tees drops as shoppers substitute for Walmart/Amazon basics.
-                    </td>
-                    <td>
-                        * <strong>WSJ Analysts:</strong> Contrast Target's $10 price with Walmart’s $6.98, making the premium hard to justify.<br>
-                        * <strong>BLS Monitors:</strong> War-related fuel/shipping costs are heightening consumer price sensitivity.
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>Mid-Term<br>(6-18 Months)</strong></td>
-                    <td>
-                        * <strong>Equity Erosion Risk:</strong> High risk of the brand being perceived as "selectively overpriced."<br>
-                        * <strong>Strategic Pivot:</strong> Implementation of a "Value Tier" sub-brand likely required to protect the mid-tier core.
-                    </td>
-                    <td>
-                        * <strong>Deloitte Insights:</strong> 41% value-prioritization is a "fundamental market transformation," not temporary.<br>
-                        * <strong>Retail Executives:</strong> Planned 100% cotton upgrade is the primary defense for holding the $10 price point.
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>Long-Term<br>(18-36 Months)</strong></td>
-                    <td>
-                        * <strong>Structural Evolution:</strong> Survival depends on successfully bridging the "Premium Positioning" vs. "Value Demand" gap.<br>
-                        * <strong>Market Share Stabilization:</strong> Brand settles into "style-led value" role or risks permanent share loss to Amazon.
-                    </td>
-                    <td>
-                        * <strong>Industry Consensus:</strong> Data suggests two paths: Premium Preservation (Quality-led) or Value Tier Integration.<br>
-                        * <strong>BLS Data:</strong> Structural shift from 35% to 41% of consumers prioritizing value necessitates adaptation.
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 
-    <div class="grid-item" style="grid-column: span 2;">
-        <h3>Strategic Response & Action Plan</h3>
-        <ul>
-            <li>
-                <strong>Quality-Led Value Communication:</strong>
-                Aggressively market the 100% cotton upgrade to justify the $10 price point against Walmart's $6.98 poly-blend.
-                <span>(Counteracting price gap perception / Quality defense strategy)</span>
-            </li>
-            <li>
-                <strong>Category Traffic Rebalancing:</strong>
-                Integrate men's basics into upcoming "Value" marketing to correct the perception that the category is a pricing holdout.
-                <span>(Mitigating cannibalization from women's/kids' price cuts)</span>
-            </li>
-            <li>
-                <strong>Supply Chain Risk Mitigation:</strong>
-                Lock in cotton contracts and diversify petrochemical sourcing to hedge against Brent crude price spikes (Forecasted $115/b).
-                <span>(Response to U.S.-Iran geopolitical tensions)</span>
-            </li>
-            <li>
-                <strong>Internal Tier Management:</strong>
-                Leverage the 'dealworthy' brand as the absolute price floor, allowing Goodfellow to focus on fit and quality-led retention.
-                <span>(Preserving $31B owned-brand portfolio authority)</span>
-            </li>
-        </ul>
-    </div>
-
-    
-    <div class="grid-item" style="grid-column: span 2;">
-        <h3>Decision Rule: What Justifies a Price Cut vs a Hold-and-Monitor Strategy</h3>
-        <table class="comparison-table">
-            <thead>
-                <tr>
-                    <th>Decision path</th>
-                    <th>Evidence that supports it</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Immediate or near-term basics price cut</td>
-                    <td>
-                        <ul style="margin:0; padding-left:20px;">
-                            <li>Every Wear unit velocity falls materially below the 2025 baseline and does not recover with targeted promotion.</li>
-                            <li>Conversion on core basics weakens materially while higher-style men’s items remain relatively healthier.</li>
-                            <li>Review sentiment shifts toward “too expensive,” “not worth it,” or “Walmart/Amazon is close enough.”</li>
-                            <li>Men’s traffic weakens versus women’s and kids’ after Target’s spring value reset.</li>
-                            <li>The fabric/quality upgrade does not produce visible review, repeat, or conversion support.</li>
-                            <li>Competitor price gaps remain wide enough that Goodfellow basics increasingly look like the outlier, not the upgrade.</li>
-                        </ul>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Hold and monitor with promotions plus quality/value storytelling</td>
-                    <td>
-                        <ul style="margin:0; padding-left:20px;">
-                            <li>Ratings, repeat purchase, and basic-tee conversion stay resilient at the current architecture.</li>
-                            <li>The quality defense lands clearly and shoppers acknowledge the improvement.</li>
-                            <li>Walmart and Amazon pricing move up enough to narrow the relative perception gap.</li>
-                            <li>Promotions can recover demand tactically without training the shopper to wait for markdowns.</li>
-                            <li>Oil, freight, insurance, and supplier-cost visibility remain too unstable to justify a permanent list-price reset.</li>
-                            <li>Higher-style items continue to support margin and keep the full men’s brand from collapsing into a purely low-price frame.</li>
-                        </ul>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
 </div>
-<!--2부-->
+
 
 
     <script type="text/javascript" asye minimis exemption erodes the price advantage of Shein and Temu, creating a significant opportunity fonc="" src="./analytics.js.다운로드"></script><script type="text/javascript" async="" src="./js"></script><script type="text/javascript" async="" src="./js(1)"></script><script async="" src="./js(2)"></script><script>
         document.addEventListener('DOMContentLoaded', function() {
+            // Reference panel toggle
+            window.toggleRefPanel = function() {
+                document.getElementById('refPanel').classList.toggle('active');
+            };
+            window.toggleRefImg = function() {
+                var img = document.getElementById('refImg');
+                img.src = img.src.includes('short.png') ? 'long.png' : 'short.png';
+            };
             // 카드 접기/펼치기 기능
             const headers = document.querySelectorAll('.details-container .card-header');
             
